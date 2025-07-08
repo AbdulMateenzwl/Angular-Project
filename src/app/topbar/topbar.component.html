@@ -1,0 +1,15 @@
+<nav class="flex p-2 items-center justify-center">
+
+  <div class="toggle-container">
+    <button [class.active]="viewMode === 'grid'" (click)="setView('grid')" class="text-[12px]">
+      <i class="fas fa-th"></i>
+      Grid
+    </button>
+
+    <button [class.active]="viewMode === 'list'" (click)="setView('list')" class="text-[12px]">
+      <i class="fas fa-list"></i>
+      List
+    </button>
+  </div>
+
+</nav>
