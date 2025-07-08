@@ -1,5 +1,5 @@
 export enum FrequencyType {
-  Daily = 'daily',
-  Weekly = 'weekly',
-  Monthly = 'monthly',
+  DAILY = 'daily',
+  WEEKLY = 'weekly',
+  MONTHLY = 'monthly',
 }

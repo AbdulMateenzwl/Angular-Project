@@ -5,14 +5,17 @@ import { RepeatType } from '../enum/RepeatType';
 import { Days } from '../enum/Days';
 import { TimeOfDay } from '../enum/TimeOfDay';
 import { Injectable } from '@angular/core';
+import { HabitStatus } from '../enum/HabitStatus';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HabitsService {
   habits: Habit[] = [
-    new Habit('Exercise', new Date(), 6, FrequencyType.Daily, RepeatType.Days, [Days.Monday, Days.Wednesday, Days.Friday], [], '08:00', TimeOfDay.Morning, 0),
-    new Habit('Drink Water', new Date(), 6, FrequencyType.Daily, RepeatType.Days, [Days.Monday, Days.Wednesday, Days.Friday], [], '08:00', TimeOfDay.Morning, 0),
+    new Habit('Exercise', new Date(), HabitStatus.PENDING, 30, FrequencyType.DAILY, 0, RepeatType.DAYS, TimeOfDay.MORNING, [Days.MONDAY, Days.WEDNESDAY, Days.FRIDAY], [], '08:00'),
+    new Habit('Exercise', new Date(), HabitStatus.SKIPPED, 30, FrequencyType.DAILY, 0, RepeatType.DAYS, TimeOfDay.MORNING, [Days.MONDAY, Days.WEDNESDAY, Days.FRIDAY], [], '08:00'),
+    new Habit('Exercise', new Date(), HabitStatus.FAILED, 30, FrequencyType.DAILY, 0, RepeatType.DAYS, TimeOfDay.MORNING, [Days.MONDAY, Days.WEDNESDAY, Days.FRIDAY], [], '08:00'),
+    new Habit('Exercise', new Date(), HabitStatus.COMPLETED, 30, FrequencyType.DAILY, 30, RepeatType.DAYS, TimeOfDay.MORNING, [Days.MONDAY, Days.WEDNESDAY, Days.FRIDAY], [], '08:00'),
   ];
   habitsSubject = new BehaviorSubject<Habit[]>(this.habits);
 
@@ -25,8 +28,8 @@ export class HabitsService {
     const habitToUpdate = this.habits.find(h => h.id === habitId);
     if (habitToUpdate) {
       habitToUpdate.progress += progress;
+      habitToUpdate.status = habitToUpdate.progress >= habitToUpdate.frequency ? HabitStatus.COMPLETED : HabitStatus.PENDING;
       this.habitsSubject.next(this.habits);
-      console.log(`Progress added to habit ${habitId}: ${progress}. New progress: ${habitToUpdate.progress}`);
     }
   }
 }

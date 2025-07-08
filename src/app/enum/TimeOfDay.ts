@@ -1,5 +1,5 @@
 export enum TimeOfDay {
-  Morning = 'morning',
-  Afternoon = 'afternoon',
-  Evening = 'evening',
+  MORNING = 'morning',
+  AFTERNOON = 'afternoon',
+  EVENING = 'evening',
 }
