@@ -2,8 +2,8 @@
   <div class="flex flex-1 px-4 py-6">
     <i class="fas fa-check-circle text-green-500 aspect-square text-2xl"></i>
     <div class="flex flex-1 flex-col ml-4">
-      <span class="text-sm">Habit Item</span>
-      <span class="text-xs text-gray-500">Habit Item</span>
+      <span class="text-sm">{{habit.title}}</span>
+      <span class="text-xs text-gray-500">{{habit.progress + ' '}}/{{' '+habit.frequency}}</span>
     </div>
   </div>
 
@@ -12,10 +12,11 @@
   <div class="flex items-center invisible group-hover:visible">
     <div class="flex flex-col px-4 py-6">
       <p class="text-xs">Add Times</p>
-      <input type="text"
-        class="border-0 border-b border-b-gray-300 focus:border-b-blue-500 outline-none px-2 py-1 text-sm w-24 text-blue-600" />
+      <input type="number"
+        class="border-0 border-b border-b-gray-300 focus:border-b-blue-500 outline-none px-2 py-1 text-sm w-24 text-blue-600"
+        value="0" pattern="^[0-9]*$" #input />
     </div>
-    <i class="fa-solid fa-check text-blue-600 mx-3 p-1 text-sm bg-gray-200 rounded-md"></i>
+    <i class="fa-solid fa-check text-blue-600 mx-3 p-1 text-sm bg-gray-200 rounded-md"  (click)="addProgress(input.value)"></i>
   </div>
   <div class="w-px bg-gray-200 ml-auto invisible group-hover:visible"></div>
   <i class="fa-solid fa-ellipsis text-gray-600 my-auto mx-3 p-1 text-lg invisible group-hover:visible"></i>
