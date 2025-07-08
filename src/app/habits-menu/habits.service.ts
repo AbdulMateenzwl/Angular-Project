@@ -59,7 +59,7 @@ export class HabitsService {
       FrequencyType.DAILY,
       30,
       RepeatType.DAYS,
-      TimeOfDay.MORNING,
+      TimeOfDay.EVENING,
       [Days.MONDAY, Days.WEDNESDAY, Days.FRIDAY],
       [],
       '08:00'

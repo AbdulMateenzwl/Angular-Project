@@ -14,9 +14,10 @@ import { MenuModule } from 'primeng/menu';
 import { HabitsMenuBarComponent } from './habits-menu/habits-menu-bar/habits-menu-bar.component';
 import { HabitItemComponent } from './habits-menu/habit-item/habit-item.component';
 import { HabitsListComponent } from './habits-menu/habits-list/habits-list.component';
+import { HabitsBottomBarComponent } from './habits-menu/habits-bottom-bar/habits-bottom-bar.component';
 
 @NgModule({
-  declarations: [AppComponent, SidebarComponent, TopbarComponent, HabitsMenuComponent, HabitsMenuBarComponent, HabitItemComponent, HabitsListComponent],
+  declarations: [AppComponent, SidebarComponent, TopbarComponent, HabitsMenuComponent, HabitsMenuBarComponent, HabitItemComponent, HabitsListComponent, HabitsBottomBarComponent],
   imports: [BrowserModule, AppRoutingModule, CalendarModule, FormsModule, BrowserAnimationsModule, MenuModule],
   providers: [],
   bootstrap: [AppComponent],
