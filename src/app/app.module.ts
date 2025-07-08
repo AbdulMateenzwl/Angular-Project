@@ -12,9 +12,10 @@ import { CalendarModule } from 'primeng/calendar';
 import { FormsModule } from '@angular/forms';
 import { MenuModule } from 'primeng/menu';
 import { HabitsMenuBarComponent } from './habits-menu/habits-menu-bar/habits-menu-bar.component';
+import { HabitItemComponent } from './habits-menu/habit-item/habit-item.component';
 
 @NgModule({
-  declarations: [AppComponent, SidebarComponent, TopbarComponent, HabitsMenuComponent, HabitsMenuBarComponent],
+  declarations: [AppComponent, SidebarComponent, TopbarComponent, HabitsMenuComponent, HabitsMenuBarComponent, HabitItemComponent],
   imports: [BrowserModule, AppRoutingModule, CalendarModule, FormsModule, BrowserAnimationsModule, MenuModule],
   providers: [],
   bootstrap: [AppComponent],
