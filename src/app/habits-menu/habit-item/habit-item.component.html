@@ -12,7 +12,7 @@
 
   <div class="w-px bg-gray-200 ml-auto invisible group-hover:visible"></div>
 
-  <div class="flex items-center invisible group-hover:visible">
+  <div class="flex items-center invisible group-hover:visible" *ngIf="habit.status === HabitStatus.PENDING">
     <div class="flex flex-col px-4 py-6">
       <p class="text-xs">Add Times</p>
       <input type="number"
@@ -20,9 +20,19 @@
         value="0" pattern="^[0-9]*$" #input />
     </div>
     <i class="fa-solid fa-check text-blue-600 mx-3 p-1 text-sm bg-gray-200 rounded-md"
-      (click)="addProgress(input.value)"></i>
+      (click)="onAddProgress(input.value)"></i>
   </div>
+
+  <button class="invisible group-hover:visible px-3 text-sm text-blue-500" *ngIf="habit.status !== HabitStatus.PENDING"
+    (click)="onLogClear()">
+    <i class="fa-solid fa-trash mr-2"></i>Clear Logs
+  </button>
+
   <div class="w-px bg-gray-200 ml-auto invisible group-hover:visible"></div>
-  <i class="fa-solid fa-ellipsis text-gray-600 my-auto mx-3 p-1 text-lg invisible group-hover:visible"></i>
+  <p-menu #menu [model]="items" styleClass="text-sm" [popup]="true"></p-menu>
+  <button pButton type="button" (click)="menu.toggle($event)">
+    <i class="fa-solid fa-ellipsis text-gray-600 my-auto mx-3 p-1 text-lg invisible group-hover:visible"></i>
+    <!-- <i class="fa-solid fa-bars"></i> -->
+  </button>
 </section>
 <hr class="ml-16" />

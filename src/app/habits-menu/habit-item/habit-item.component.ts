@@ -2,6 +2,7 @@ import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { Habit } from '../habit.model';
 import { HabitsService } from '../habits.service';
 import { HabitStatus } from '../../enum/HabitStatus';
+import { MenuItem } from 'primeng/api';
 
 @Component({
   selector: 'app-habit-item',
@@ -10,13 +11,50 @@ import { HabitStatus } from '../../enum/HabitStatus';
 })
 export class HabitItemComponent implements OnInit {
   @Input() habit!: Habit;
+  items: MenuItem[] | undefined;
 
   constructor(private habitsService: HabitsService) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.items = [
+      {
+        items: [
+          {
+            label: 'Mark as Completed',
+            command: () => {
+              if (this.habit) {
+                this.habitsService.completeHabit(this.habit.id);
+              }
+            },
+          },
+          {
+            label: 'Mark as Failed',
+            command: () => {
+              if (this.habit) {
+                this.habitsService.updateHabitStatus(
+                  this.habit.id,
+                  HabitStatus.FAILED
+                );
+              }
+            },
+          },
+          {
+            label: 'Mark as Skipped',
+            command: () => {
+              if (this.habit) {
+                this.habitsService.updateHabitStatus(
+                  this.habit.id,
+                  HabitStatus.SKIPPED
+                );
+              }
+            },
+          },
+        ],
+      },
+    ];
   }
 
-  addProgress(progress: string) {
+  onAddProgress(progress: string) {
     const progressNumber = parseInt(progress, 10);
     if (isNaN(progressNumber) || progressNumber <= 0) {
       return;
@@ -26,7 +64,11 @@ export class HabitItemComponent implements OnInit {
     }
   }
 
-  get HabitStatus(){
+  onLogClear() {
+    this.habitsService.clearLogs(this.habit.id);
+  }
+
+  get HabitStatus() {
     return HabitStatus;
   }
 }
