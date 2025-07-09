@@ -35,3 +35,4 @@
   </button>
 </section>
 <hr class="ml-16" />
+<app-create-habit *ngIf="isEditingHabit" [onClose]="closeEditHabit" [habitId]="habit.id"></app-create-habit>

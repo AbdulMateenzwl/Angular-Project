@@ -114,4 +114,17 @@ export class HabitsService {
     this.habits = this.habits.filter((habit) => habit.id !== id);
     this.habitsSubject.next(this.habits);
   }
+
+  getHabitById(id: string): Habit | undefined {
+    return this.habits.find((habit) => habit.id === id);
+  }
+
+  editHabit(id:string, habit:Habit)  {
+    const index = this.habits.findIndex((h) => h.id === id);
+    if (index !== -1) {
+      this.habits[index] = habit;
+      this.habitsSubject.next(this.habits);
+    }
+  }
+
 }

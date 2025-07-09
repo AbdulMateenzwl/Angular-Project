@@ -44,6 +44,13 @@ export class HabitItemComponent implements OnInit {
           },
         },
         {
+          icon: 'pi pi-pencil',
+          label: 'Edit',
+          command: () => {
+            this.toggleEditHabit();
+          },
+        },
+        {
           icon :'pi pi-trash',
           label: 'Delete',
           command: () => {
@@ -53,6 +60,8 @@ export class HabitItemComponent implements OnInit {
       ],
     },
   ];
+
+  isEditingHabit = false;
 
   constructor(private habitsService: HabitsService) {}
 
@@ -75,4 +84,12 @@ export class HabitItemComponent implements OnInit {
   get HabitStatus() {
     return HabitStatus;
   }
+
+  toggleEditHabit() {
+    this.isEditingHabit = !this.isEditingHabit;
+  }
+
+  closeEditHabit = () => {
+    this.isEditingHabit = false;
+  };
 }
