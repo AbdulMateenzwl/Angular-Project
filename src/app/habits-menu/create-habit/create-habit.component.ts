@@ -67,26 +67,17 @@ export class CreateHabitComponent implements OnInit {
       this.onClose();
     } else {
       this.newHabitForm.markAllAsTouched();
-      alert('Please fill out all required fields correctly.');
     }
   }
 
   onCancel(): void {
-    // Reset the form to its initial state
-    this.newHabitForm.reset({
-      name: '',
-      goal: {
-        value: 1,
-        times: 'Times',
-        frequency: 'Per Day',
-      },
-      repeat: 'Daily',
-      timeOfDay: 'Any Time',
-      startDate: new Date(),
-      reminders: '',
-    });
-    console.log('Form Cancelled and Reset.');
-    alert('Form has been cancelled and reset.'); // Using alert for demonstration
+    if(this.newHabitForm.dirty) {
+      const confirmCancel = confirm('You have unsaved changes. Are you sure you want to cancel?');
+      if (!confirmCancel) {
+        return;
+      }
+    }
+    this.onClose();
   }
 
   handleBackdropClick(event: MouseEvent) {

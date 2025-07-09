@@ -14,7 +14,7 @@ export class OffModeComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private offModeService: OffModeService
+    protected offModeService: OffModeService
   ) {}
 
   ngOnInit(): void {
@@ -41,5 +41,10 @@ export class OffModeComponent implements OnInit {
       this.offModeService.setOffMode(reason, startDate, endDate);
       this.onClose?.();
     }
+  }
+
+  onClearOffMode(){
+    this.offModeService.clearOffMode();
+    this.onClose?.();
   }
 }

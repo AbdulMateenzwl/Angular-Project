@@ -42,9 +42,13 @@
         </div>
 
         <!-- Action Buttons -->
-        <div class="flex justify-end gap-3 border-gray-200">
+        <div class="flex  gap-3 border-gray-200">
+          <button type="button" (click)="onClearOffMode()" *ngIf="offModeService.isOffModeActive"
+            class="px-6 text-white py-3 bg-green-500 rounded-lg font-medium hover:bg-gray-300 transition-colors duration-200">
+            Clear Off Mode
+          </button>
           <button type="button" (click)="onClose()"
-            class="px-6 py-3 bg-gray-200 text-gray-700 rounded-lg font-medium hover:bg-gray-300 transition-colors duration-200">
+            class="ml-auto px-6 py-3 bg-gray-200 text-gray-700 rounded-lg font-medium hover:bg-gray-300 transition-colors duration-200">
             Cancel
           </button>
           <button type="submit" [disabled]="form.invalid"
