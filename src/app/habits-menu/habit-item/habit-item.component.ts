@@ -15,6 +15,7 @@ export class HabitItemComponent implements OnInit {
     {
       items: [
         {
+          icon:'pi pi-check-circle',
           label: 'Mark as Completed',
           command: () => {
             if (this.habit) {
@@ -23,25 +24,30 @@ export class HabitItemComponent implements OnInit {
           },
         },
         {
+          icon: 'pi pi-times-circle',
           label: 'Mark as Failed',
           command: () => {
-            if (this.habit) {
-              this.habitsService.updateHabitStatus(
-                this.habit.id,
-                HabitStatus.FAILED
-              );
-            }
+            this.habitsService.updateHabitStatus(
+              this.habit.id,
+              HabitStatus.FAILED
+            );
           },
         },
         {
+          icon: 'pi pi-minus-circle',
           label: 'Mark as Skipped',
           command: () => {
-            if (this.habit) {
-              this.habitsService.updateHabitStatus(
-                this.habit.id,
-                HabitStatus.SKIPPED
-              );
-            }
+            this.habitsService.updateHabitStatus(
+              this.habit.id,
+              HabitStatus.SKIPPED
+            );
+          },
+        },
+        {
+          icon :'pi pi-trash',
+          label: 'Delete',
+          command: () => {
+            this.habitsService.deleteHabit(this.habit.id);
           },
         },
       ],

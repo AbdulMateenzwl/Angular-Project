@@ -109,4 +109,9 @@ export class HabitsService {
       this.habitsSubject.next(this.habits);
     }
   }
+
+  deleteHabit(id:string) {
+    this.habits = this.habits.filter((habit) => habit.id !== id);
+    this.habitsSubject.next(this.habits);
+  }
 }
