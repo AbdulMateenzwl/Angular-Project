@@ -28,8 +28,6 @@ export class HabitsListComponent implements OnInit, OnDestroy {
 
     this.habitsSubscription = this.habitsService.habitsSubject.subscribe(
       (habits: Habit[]) => {
-        console.log("habits update subscirption")
-        console.log(habits);
         switch (this.routerData) {
           case TimeOfDay.MORNING:
           case TimeOfDay.AFTERNOON:

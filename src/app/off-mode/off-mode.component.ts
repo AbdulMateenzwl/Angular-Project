@@ -30,7 +30,6 @@ export class OffModeComponent implements OnInit {
 
   handleBackdropClick(event: MouseEvent) {
     if (event.target === this.backdropRef.nativeElement) {
-      console.log('Backdrop clicked:', event);
       this.onClose?.();
     }
   }

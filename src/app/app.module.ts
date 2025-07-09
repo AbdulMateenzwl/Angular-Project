@@ -21,6 +21,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { CalendarModule } from 'primeng/calendar';
 import { OffModeComponent } from './off-mode/off-mode.component';
 import { OffModeScreenComponent } from './off-mode/off-mode-screen/off-mode-screen.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { OffModeScreenComponent } from './off-mode/off-mode-screen/off-mode-scre
     MultiSelectModule,
     AutoCompleteModule,
     DropdownModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

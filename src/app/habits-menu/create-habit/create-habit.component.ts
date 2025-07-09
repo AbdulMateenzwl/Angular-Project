@@ -37,18 +37,17 @@ export class CreateHabitComponent implements OnInit {
     if (this.habitId) {
       const habit = this.habitService.getHabitById(this.habitId);
       if (habit) {
-        console.log(habit);
         this.isEditMode = true;
         this.newHabitForm = this.fb.group({
           name: [habit.title, Validators.required],
           goal: this.fb.group({
             value: [habit.frequency, [Validators.required, Validators.min(1)]],
             times: [habit.frequenceyType, Validators.required],
-            frequency: [habit.repeatType, Validators.required],
+            frequency: [habit.frequenceyType, Validators.required],
           }),
           repeat: [habit.repeatType, Validators.required],
           timeOfDay: [habit.timeOfDay, Validators.required],
-          startDate: [habit.startDate, Validators.required],
+          startDate: [new Date(habit.startDate), Validators.required],
           reminders: [habit.reminderTime],
         });
       }
@@ -71,7 +70,6 @@ export class CreateHabitComponent implements OnInit {
   onSubmit(): void {
     if (this.newHabitForm.valid) {
       if (this.isEditMode) {
-        console.log('Form Updated!', this.newHabitForm.value);
         const habitData = this.newHabitForm.value;
         const oldHabit = this.habitService.getHabitById(this.habitId);
         if(!oldHabit) {
@@ -90,8 +88,6 @@ export class CreateHabitComponent implements OnInit {
           [],
           ''
         );
-        console.log('Updated Habit:', updatedHabit);
-        console.log('TimeofDay', [TimeOfDay[habitData.timeOfDay as keyof typeof TimeOfDay]]);
         updatedHabit.id = this.habitId;
         this.habitService.editHabit(this.habitId, updatedHabit);
       } else {
@@ -102,7 +98,7 @@ export class CreateHabitComponent implements OnInit {
           HabitStatus.PENDING,
           habitData.goal.value,
           habitData.goal.frequency,
-          habitData.goal.value,
+          0,
           habitData.repeat,
           habitData.timeOfDay,
           [],
