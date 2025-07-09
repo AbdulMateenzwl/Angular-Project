@@ -1,8 +1,11 @@
 <div class="flex flex-col h-[100vh] bg-[#F5F5F5]">
   <app-topbar></app-topbar>
   <div class="flex flex-1 ">
-    <app-sidebar></app-sidebar>
+    <app-sidebar (onOffMode)="toggleOffMode()"></app-sidebar>
     <div class="flex-1 bg-white rounded-xl overflow-y-auto border">
       <router-outlet></router-outlet>
+    </div>
   </div>
+
 </div>
+<app-off-mode *ngIf="isOffMode" [onClose]="closeOffMode"></app-off-mode>

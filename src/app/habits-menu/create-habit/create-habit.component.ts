@@ -60,10 +60,11 @@ export class CreateHabitComponent implements OnInit {
         [TimeOfDay[habitData.timeOfDay as keyof typeof TimeOfDay]],
         [],
         [],
-        ''        );
+        ''
+      );
 
       this.habitService.addHabit(habit);
-        this.onClose();
+      this.onClose();
     } else {
       this.newHabitForm.markAllAsTouched();
       alert('Please fill out all required fields correctly.');

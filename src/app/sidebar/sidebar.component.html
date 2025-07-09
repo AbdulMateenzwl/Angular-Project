@@ -4,51 +4,35 @@
       class="aspect-square h-7 rounded-full " alt="">
     <p class="text-sm">Abdul Mateen</p>
   </button>
-  <a class="p-2 flex items-center gap-3 mt-1 text-gray-500 cursor-pointer text-xs" [routerLink]="['/journal/all-habits']" routerLinkActive="bg-[#2A67F4] rounded-md text-white active">
+  <a class="p-2 flex items-center gap-3 mt-1 text-gray-500 cursor-pointer text-xs"
+    [routerLink]="['/journal/all-habits']" routerLinkActive="bg-[#2A67F4] rounded-md text-white active">
     <i class="fa-solid fa-folder"></i>
     <p class="text-sm">All Habits</p>
   </a>
   <details open class="text-gray-500 text-xs mt-4">
     <summary class="">TIME OF DAY</summary>
-    <a class="p-2 flex items-center gap-3 mt-1 cursor-pointer" [routerLink]="['/journal/morning']" routerLinkActive="bg-[#2A67F4] rounded-md text-white active">
+    <a class="p-2 flex items-center gap-3 mt-1 cursor-pointer" [routerLink]="['/journal/morning']"
+      routerLinkActive="bg-[#2A67F4] rounded-md text-white active">
       <i class="fa-solid fa-mountain-sun"></i>
       <p class="text-sm">Morning</p>
     </a>
-    <a class="p-2 flex items-center gap-3 mt-1 cursor-pointer" [routerLink]="['/journal/afternoon']" routerLinkActive="bg-[#2A67F4] rounded-md text-white active">
+    <a class="p-2 flex items-center gap-3 mt-1 cursor-pointer" [routerLink]="['/journal/afternoon']"
+      routerLinkActive="bg-[#2A67F4] rounded-md text-white active">
       <i class="fa-solid fa-sun"></i>
       <p class="text-sm">Afternoon</p>
     </a>
-    <a class="p-2 flex items-center gap-3 mt-1  cursor-pointer"  [routerLink]="['/journal/evening']" routerLinkActive="bg-[#2A67F4] rounded-md text-white active">
+    <a class="p-2 flex items-center gap-3 mt-1  cursor-pointer" [routerLink]="['/journal/evening']"
+      routerLinkActive="bg-[#2A67F4] rounded-md text-white active">
       <i class="fa-solid fa-moon scale-110 ml-[2px]"></i>
       <p class="text-sm">Evening</p>
     </a>
   </details>
 
   <details open class="text-gray-500 text-xs mt-4">
-    <summary>AREAS</summary>
-    <a class="p-2 flex items-center gap-3 mt-1 text-gray-500 cursor-pointer">
-      <i class="fa-solid fa-plus"></i>
-      <p class="text-sm">New Area</p>
-    </a>
-  </details>
-
-  <details open class="text-gray-500 text-xs mt-4">
     <summary>PREFERENCES</summary>
-    <a class="p-2 flex items-center gap-3 mt-1 text-gray-500 cursor-pointer">
-      <i class="fa-solid fa-infinity"></i>
-      <p class="text-sm">Habits</p>
-    </a>
-    <a class="p-2 flex items-center gap-3 mt-1 text-gray-500 cursor-pointer">
+    <a class="p-2 flex items-center gap-3 mt-1 text-gray-500 cursor-pointer" (click)="triggerOffMode()">
       <i class="fa-solid fa-umbrella-beach"></i>
       <p class="text-sm">Off Mode</p>
-    </a>
-    <a class="p-2 flex items-center gap-3 mt-1 text-gray-500 cursor-pointer">
-      <i class="fa-solid fa-star"></i>
-      <p class="text-sm">Payment</p>
-    </a>
-    <a class="p-2 flex items-center gap-3 mt-1 text-gray-500 cursor-pointer">
-      <i class="fa-solid fa-gear"></i>
-      <p class="text-sm">Settings</p>
     </a>
   </details>
 </header>

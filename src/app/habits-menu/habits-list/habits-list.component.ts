@@ -5,6 +5,7 @@ import { HabitStatus } from 'src/app/enum/HabitStatus';
 import { Subscription } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { TimeOfDay } from 'src/app/enum/TimeOfDay';
+import { OffModeService } from 'src/app/off-mode/off-mode.service';
 
 @Component({
   selector: 'app-habits-list',

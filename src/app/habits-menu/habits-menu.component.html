@@ -1,6 +1,7 @@
 <div class="flex flex-col h-full">
   <app-habits-menu-bar></app-habits-menu-bar>
   <hr>
-  <app-habits-list></app-habits-list>
+  <app-habits-list *ngIf="!offModeService.isOffModeActive"></app-habits-list>
+  <app-off-mode-screen *ngIf="offModeService.isOffModeActive" class="flex-1"></app-off-mode-screen>
   <app-habits-bottom-bar class="mt-auto"></app-habits-bottom-bar>
 </div>

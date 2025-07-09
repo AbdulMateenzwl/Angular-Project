@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MenuItem } from 'primeng/api';
+import { OffModeService } from '../off-mode/off-mode.service';
 
 @Component({
   selector: 'app-habits-menu',
@@ -7,5 +8,6 @@ import { MenuItem } from 'primeng/api';
   styleUrls: ['./habits-menu.component.css'],
 })
 export class HabitsMenuComponent {
-  
+
+  constructor(protected offModeService: OffModeService) {}
 }

@@ -19,6 +19,8 @@ import { MultiSelectModule } from 'primeng/multiselect';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { DropdownModule } from 'primeng/dropdown';
 import { CalendarModule } from 'primeng/calendar';
+import { OffModeComponent } from './off-mode/off-mode.component';
+import { OffModeScreenComponent } from './off-mode/off-mode-screen/off-mode-screen.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { CalendarModule } from 'primeng/calendar';
     HabitsListComponent,
     HabitsBottomBarComponent,
     CreateHabitComponent,
+    OffModeComponent,
+    OffModeScreenComponent,
   ],
   imports: [
     BrowserModule,
