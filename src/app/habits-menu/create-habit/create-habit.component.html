@@ -1,0 +1,99 @@
+<!-- Backdrop -->
+<div #backdrop class="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-10"
+  (click)="handleBackdropClick($event)">
+
+  <div class="min-h-screen flex justify-center p-5 font-sans items-center">
+    <div class="bg-white rounded-xl shadow-lg p-8 overflow-auto">
+      <!-- Card Header -->
+      <div class="mb-4 border-gray-200">
+        <h2 class="text-2xl font-semibold text-gray-800">New Habit</h2>
+      </div>
+
+      <!-- Reactive form for new habit creation -->
+      <form [formGroup]="newHabitForm" (ngSubmit)="onSubmit()">
+        <!-- Name Input Field -->
+        <div class="mb-5">
+          <label for="name" class="block text-xs font-medium text-gray-600 uppercase mb-2">NAME</label>
+          <div class="flex items-center gap-3">
+            <input id="name" type="text" formControlName="name" placeholder="Enter habit name"
+              class="flex-grow p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+          </div>
+          <!-- Error message for name field -->
+          <p *ngIf="newHabitForm.get('name')?.invalid && newHabitForm.get('name')?.touched"
+            class="text-red-500 text-sm mt-1">
+            Name is required.
+          </p>
+        </div>
+
+        <!-- Goal Section -->
+        <div class="mb-5">
+          <label class="block text-xs font-medium text-gray-600 uppercase mb-2">GOAL</label>
+          <div formGroupName="goal" class="flex items-center gap-3">
+            <!-- Goal Value Input -->
+            <input type="number" formControlName="value" min="1"
+              class="w-20 p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+            <p-dropdown formControlName="times" [options]="goalTimesOptions" styleClass="w-full flex-1 border-2"
+              class="flex-1"></p-dropdown>
+            <p-dropdown formControlName="frequency" [options]="goalFrequencyOptions" styleClass="w-full flex-1 border-2"
+              class="flex-1"></p-dropdown>
+          </div>
+        </div>
+
+        <!-- Repeat Section -->
+        <div class="mb-5 flex flex-col">
+          <label class="block text-xs font-medium text-gray-600 uppercase mb-2">REPEAT</label>
+
+          <p-dropdown formControlName="repeat" [options]="repeatOptions"
+            styleClass="w-full flex-1 border-2"></p-dropdown>
+        </div>
+
+        <!-- Time of Day and Start Date Section -->
+        <div class="flex flex-wrap gap-5 mb-5">
+          <!-- Time of Day Dropdown -->
+          <div class="flex-1 min-w-[250px]">
+            <label class="block text-xs font-medium text-gray-600 uppercase mb-2">TIME OF DAY</label>
+            <p-multiSelect [options]="timeOfDayOptions" formControlName="timeOfDay"
+              styleClass="w-full border-1 border-blue-500 bg-gray-200 z-30" ngClass="z-50" [filter]="false"></p-multiSelect>
+            <!-- Error message for time of day -->
+            <p *ngIf="newHabitForm.get('timeOfDay')?.errors?.['required'] && (newHabitForm.get('timeOfDay')?.touched || newHabitForm.get('timeOfDay')?.dirty)"
+              class="text-red-500 text-sm mt-1">
+              Time of Day is required.
+            </p>
+          </div>
+
+          <!-- Start Date Picker (using native HTML date input) -->
+          <div class="flex-1 min-w-[250px]">
+            <label class="block text-xs font-medium text-gray-600 uppercase mb-2">START DATE</label>
+            <p-calendar formControlName="startDate" styleClass="h-12 border border-2 rounded-md p-3 pl-3"></p-calendar>
+            <!-- Error message for start date -->
+            <p *ngIf="newHabitForm.get('startDate')?.invalid && newHabitForm.get('startDate')?.touched"
+              class="text-red-500 text-sm mt-1">
+              Start Date is required.
+            </p>
+          </div>
+        </div>
+
+        <!-- Reminders Textarea -->
+        <div class="mb-4">
+          <label class="block text-xs font-medium text-gray-600 uppercase mb-2">REMINDERS</label>
+          <textarea formControlName="reminders" placeholder="Add reminders or notes" rows="3"
+            class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 resize-y"></textarea>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex justify-end gap-3 border-gray-200">
+          <button type="button" (click)="onCancel()"
+            class="px-6 py-3 bg-gray-200 text-gray-700 rounded-lg font-medium hover:bg-gray-300 transition-colors duration-200">
+            Cancel
+          </button>
+          <button type="submit"
+            class="px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors duration-200 shadow-md">
+            Save
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</div>

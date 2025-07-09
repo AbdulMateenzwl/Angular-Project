@@ -13,7 +13,7 @@ import { TimeOfDay } from 'src/app/enum/TimeOfDay';
 })
 export class HabitsListComponent implements OnInit, OnDestroy {
   habits: Habit[] = [];
-  routerData: TimeOfDay | unknown = TimeOfDay.ALL;
+  routerData: TimeOfDay = TimeOfDay.MORNING;
   habitsSubscription!: Subscription;
 
   constructor(
@@ -32,7 +32,7 @@ export class HabitsListComponent implements OnInit, OnDestroy {
           case TimeOfDay.AFTERNOON:
           case TimeOfDay.EVENING:
             this.habits = habits.filter(
-              (habit) => habit.timeOfDay === this.routerData
+              (habit) => habit.timeOfDay.includes(this.routerData)
             );
             break;
           default:

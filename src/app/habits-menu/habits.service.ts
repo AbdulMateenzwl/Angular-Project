@@ -20,7 +20,7 @@ export class HabitsService {
       FrequencyType.DAILY,
       0,
       RepeatType.DAYS,
-      TimeOfDay.MORNING,
+      [TimeOfDay.MORNING],
       [Days.MONDAY, Days.WEDNESDAY, Days.FRIDAY],
       [],
       '08:00'
@@ -33,7 +33,7 @@ export class HabitsService {
       FrequencyType.DAILY,
       0,
       RepeatType.DAYS,
-      TimeOfDay.MORNING,
+      [TimeOfDay.MORNING],
       [Days.MONDAY, Days.WEDNESDAY, Days.FRIDAY],
       [],
       '08:00'
@@ -46,7 +46,7 @@ export class HabitsService {
       FrequencyType.DAILY,
       0,
       RepeatType.DAYS,
-      TimeOfDay.MORNING,
+      [TimeOfDay.MORNING],
       [Days.MONDAY, Days.WEDNESDAY, Days.FRIDAY],
       [],
       '08:00'
@@ -59,7 +59,7 @@ export class HabitsService {
       FrequencyType.DAILY,
       30,
       RepeatType.DAYS,
-      TimeOfDay.EVENING,
+      [TimeOfDay.EVENING],
       [Days.MONDAY, Days.WEDNESDAY, Days.FRIDAY],
       [],
       '08:00'

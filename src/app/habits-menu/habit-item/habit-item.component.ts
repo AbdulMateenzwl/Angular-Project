@@ -11,48 +11,46 @@ import { MenuItem } from 'primeng/api';
 })
 export class HabitItemComponent implements OnInit {
   @Input() habit!: Habit;
-  items: MenuItem[] | undefined;
+  items: MenuItem[] = [
+    {
+      items: [
+        {
+          label: 'Mark as Completed',
+          command: () => {
+            if (this.habit) {
+              this.habitsService.completeHabit(this.habit.id);
+            }
+          },
+        },
+        {
+          label: 'Mark as Failed',
+          command: () => {
+            if (this.habit) {
+              this.habitsService.updateHabitStatus(
+                this.habit.id,
+                HabitStatus.FAILED
+              );
+            }
+          },
+        },
+        {
+          label: 'Mark as Skipped',
+          command: () => {
+            if (this.habit) {
+              this.habitsService.updateHabitStatus(
+                this.habit.id,
+                HabitStatus.SKIPPED
+              );
+            }
+          },
+        },
+      ],
+    },
+  ];
 
   constructor(private habitsService: HabitsService) {}
 
-  ngOnInit() {
-    this.items = [
-      {
-        items: [
-          {
-            label: 'Mark as Completed',
-            command: () => {
-              if (this.habit) {
-                this.habitsService.completeHabit(this.habit.id);
-              }
-            },
-          },
-          {
-            label: 'Mark as Failed',
-            command: () => {
-              if (this.habit) {
-                this.habitsService.updateHabitStatus(
-                  this.habit.id,
-                  HabitStatus.FAILED
-                );
-              }
-            },
-          },
-          {
-            label: 'Mark as Skipped',
-            command: () => {
-              if (this.habit) {
-                this.habitsService.updateHabitStatus(
-                  this.habit.id,
-                  HabitStatus.SKIPPED
-                );
-              }
-            },
-          },
-        ],
-      },
-    ];
-  }
+  ngOnInit() {}
 
   onAddProgress(progress: string) {
     const progressNumber = parseInt(progress, 10);

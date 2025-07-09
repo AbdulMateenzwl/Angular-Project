@@ -14,7 +14,7 @@ export class Habit {
     public frequenceyType: FrequencyType,
     public progress: number,
     public repeatType: RepeatType,
-    public timeOfDay: TimeOfDay,
+    public timeOfDay: TimeOfDay[],
     public repeatDays: Days[],
     public repeatDates: string[],
     public reminderTime: string,
