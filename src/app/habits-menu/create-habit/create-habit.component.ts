@@ -128,7 +128,14 @@ export class CreateHabitComponent implements OnInit {
 
   handleBackdropClick(event: MouseEvent) {
     if (event.target === this.backdropRef.nativeElement) {
-      this.onClose?.();
+      if (!this.newHabitForm.dirty) {
+        this.onClose?.();
+        return;
+      }
+      const confirmClose = confirm('Are you sure you want to close?');
+      if (confirmClose) {
+        this.onClose?.();
+      }
     }
   }
 }
