@@ -1,5 +1,5 @@
 <header class="w-80 h-full  flex flex-col px-4">
-  <button class="bg-[#ECECEC] p-2 rounded-sm flex items-center gap-3">
+  <button class="bg-[#ECECEC] dark:bg-[#0e0d0d] dark:text-white p-2 rounded-sm flex items-center gap-3">
     <img src="https://lh3.googleusercontent.com/a/ACg8ocI_ZTkE2OhZF1NARVh0We6XfEJOv-yjMGgJROmB85Wlq3Mpz0_S=s96-c"
       class="aspect-square h-7 rounded-full " alt="">
     <p class="text-sm">Abdul Mateen</p>
@@ -35,4 +35,15 @@
       <p class="text-sm">Off Mode</p>
     </a>
   </details>
+
+  <!-- Dark Mode Toggle Button -->
+  <button
+    (click)="toggleDarkMode()"
+    class="p-2 flex items-center gap-3 mt-1 text-gray-500 dark:text-gray-400 cursor-pointer text-xs hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors duration-200"
+    [title]="(darkModeService.isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode')">
+
+    <i class="fas fa-sun text-yellow-500" *ngIf="darkModeService.isDarkMode"></i>
+    <i class="fas fa-moon text-blue-400 " *ngIf="!darkModeService.isDarkMode"></i>
+    <p class="text-sm">{{darkModeService.isDarkMode ? 'Light Mode' : 'Dark Mode'}}</p>
+  </button>
 </header>

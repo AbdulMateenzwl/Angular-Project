@@ -3,3 +3,249 @@
 @tailwind utilities;
 
 /* You can add global styles to this file, and also import other style files */
+
+/* Custom PrimeNG dark mode overrides */
+
+.dark .p-component {
+  background: #374151 !important;
+  color: #f9fafb !important;
+  border-color: #4b5563 !important;
+}
+
+.dark .p-inputtext {
+  background: #374151 !important;
+  color: #f9fafb !important;
+  border-color: #4b5563 !important;
+}
+
+.dark .p-inputtext:focus {
+  border-color: #3b82f6 !important;
+  box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.2) !important;
+}
+
+.dark .p-dropdown {
+  background: #374151 !important;
+  color: #f9fafb !important;
+  border-color: #4b5563 !important;
+}
+
+.dark .p-dropdown-panel {
+  background: #374151 !important;
+  border-color: #4b5563 !important;
+}
+
+.dark .p-dropdown-item {
+  color: #f9fafb !important;
+}
+
+.dark .p-dropdown-item:hover {
+  background: #4b5563 !important;
+}
+
+.dark .p-multiselect {
+  background: #374151 !important;
+  color: #f9fafb !important;
+  border-color: #4b5563 !important;
+}
+
+.dark .p-multiselect-panel {
+  background: #374151 !important;
+  border-color: #4b5563 !important;
+}
+
+.dark .p-multiselect-item {
+  color: #f9fafb !important;
+}
+
+.dark .p-multiselect-item:hover {
+  background: #4b5563 !important;
+}
+
+.dark .p-calendar {
+  background: #374151 !important;
+  color: #f9fafb !important;
+  border-color: #4b5563 !important;
+}
+
+.dark .p-datepicker {
+  background: #374151 !important;
+  border-color: #4b5563 !important;
+}
+
+.dark .p-datepicker table td > span {
+  color: #f9fafb !important;
+}
+
+.dark .p-datepicker table td > span:hover {
+  background: #4b5563 !important;
+}
+
+.dark .p-menu {
+  background: #374151 !important;
+  border-color: #4b5563 !important;
+}
+
+.dark .p-menuitem-text {
+  color: #f9fafb !important;
+}
+
+.dark .p-menuitem:hover {
+  background: #4b5563 !important;
+}
+
+/* Additional comprehensive dark mode styles */
+
+/* Selected and highlighted states */
+.dark .p-dropdown-item.p-highlight {
+  background: #3b82f6 !important;
+  color: #ffffff !important;
+}
+
+.dark .p-multiselect-item.p-highlight {
+  background: #3b82f6 !important;
+  color: #ffffff !important;
+}
+
+.dark .p-dropdown-item:focus {
+  background: #4b5563 !important;
+  outline: none !important;
+}
+
+.dark .p-multiselect-item:focus {
+  background: #4b5563 !important;
+  outline: none !important;
+}
+
+/* Calendar specific states */
+.dark .p-datepicker table td > span.p-highlight {
+  background: #3b82f6 !important;
+  color: #ffffff !important;
+}
+
+.dark .p-datepicker .p-datepicker-today > span {
+  background: #1f2937 !important;
+  color: #3b82f6 !important;
+  border-color: #3b82f6 !important;
+}
+
+/* Input wrapper and container styling */
+.dark .p-inputwrapper {
+  background: #374151 !important;
+}
+
+.dark .p-dropdown-label {
+  color: #f9fafb !important;
+}
+
+.dark .p-dropdown-trigger {
+  color: #f9fafb !important;
+}
+
+.dark .p-multiselect-label {
+  color: #f9fafb !important;
+}
+
+.dark .p-multiselect-trigger {
+  color: #f9fafb !important;
+}
+
+/* Button and icon states */
+.dark .p-button {
+  background: #374151 !important;
+  border-color: #4b5563 !important;
+  color: #f9fafb !important;
+}
+
+.dark .p-button:hover {
+  background: #4b5563 !important;
+}
+
+/* Calendar input field */
+.dark .p-calendar .p-inputtext {
+  background: #374151 !important;
+  color: #f9fafb !important;
+  border-color: #4b5563 !important;
+}
+
+/* Overlay panel general styling */
+.dark .p-overlaypanel {
+  background: #374151 !important;
+  border-color: #4b5563 !important;
+  color: #f9fafb !important;
+}
+
+/* Dropdown arrow/trigger icon */
+.dark .p-dropdown .p-dropdown-trigger .p-dropdown-trigger-icon {
+  color: #f9fafb !important;
+}
+
+.dark .p-multiselect .p-multiselect-trigger .p-multiselect-trigger-icon {
+  color: #f9fafb !important;
+}
+
+/* Filter input in multiselect */
+.dark .p-multiselect-filter-container .p-inputtext {
+  background: #374151 !important;
+  color: #f9fafb !important;
+  border-color: #4b5563 !important;
+}
+
+/* Checkbox states in multiselect */
+.dark .p-checkbox {
+  background: #374151 !important;
+  border-color: #4b5563 !important;
+}
+
+.dark .p-checkbox:not(.p-checkbox-disabled):hover {
+  border-color: #3b82f6 !important;
+}
+
+.dark .p-checkbox.p-highlight {
+  background: #3b82f6 !important;
+  border-color: #3b82f6 !important;
+}
+
+.dark .p-checkbox .p-checkbox-icon {
+  color: #ffffff !important;
+}
+
+/* Scrollbar in panels */
+.dark .p-dropdown-panel::-webkit-scrollbar,
+.dark .p-multiselect-panel::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dark .p-dropdown-panel::-webkit-scrollbar-track,
+.dark .p-multiselect-panel::-webkit-scrollbar-track {
+  background: #374151;
+}
+
+.dark .p-dropdown-panel::-webkit-scrollbar-thumb,
+.dark .p-multiselect-panel::-webkit-scrollbar-thumb {
+  background: #4b5563;
+  border-radius: 4px;
+}
+
+/* Panel headers and footers */
+.dark .p-multiselect-header {
+  background: #374151 !important;
+  border-color: #4b5563 !important;
+  color: #f9fafb !important;
+}
+
+/* Disabled states */
+.dark .p-dropdown.p-disabled {
+  opacity: 0.6;
+  background: #374151 !important;
+}
+
+.dark .p-multiselect.p-disabled {
+  opacity: 0.6;
+  background: #374151 !important;
+}
+
+.dark .p-inputtext:disabled {
+  opacity: 0.6;
+  background: #374151 !important;
+  color: #9ca3af !important;
+}

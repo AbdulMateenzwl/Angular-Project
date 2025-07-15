@@ -3,39 +3,39 @@
   (click)="handleBackdropClick($event)">
 
   <div class=" flex justify-center p-5 font-sans items-center">
-    <div class="bg-white rounded-xl shadow-lg p-8 overflow-visible">
+    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 overflow-visible">
       <!-- Card Header -->
       <div class="mb-4 border-gray-200">
-        <h2 class="text-2xl font-semibold text-gray-800">Off Mode</h2>
+        <h2 class="text-2xl font-semibold text-gray-800 dark:text-white">Off Mode</h2>
       </div>
 
       <form [formGroup]="form" (ngSubmit)="onSubmit()">
         <div class="mb-5">
-          <label for="name" class="block text-xs font-medium text-gray-600 uppercase mb-2">Reason</label>
+          <label for="name" class="block text-xs font-medium text-gray-600 dark:text-gray-300 uppercase mb-2">Reason</label>
           <div class="flex items-center gap-3">
             <input id="name" type="text" formControlName="reason" placeholder="Enter reason for off mode"
-              class="flex-grow p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+              class="flex-grow p-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:ring-blue-400">
           </div>
-          <p *ngIf="form.get('reason')?.invalid && form.get('reason')?.touched" class="text-red-500 text-sm mt-1">
+          <p *ngIf="form.get('reason')?.invalid && form.get('reason')?.touched" class="text-red-500 dark:text-red-400 text-sm mt-1">
             Reason is required.
           </p>
         </div>
         <div class="flex gap-2">
           <div class="mb-5">
-            <label for="startDate" class="block text-xs font-medium text-gray-600 uppercase mb-2">Start Date</label>
+            <label for="startDate" class="block text-xs font-medium text-gray-600 dark:text-gray-300 uppercase mb-2">Start Date</label>
             <p-calendar formControlName="startDate" styleClass="h-12 border border-2 rounded-md p-3 pl-3"></p-calendar>
 
             <p *ngIf="form.get('startDate')?.invalid && form.get('startDate')?.touched"
-              class="text-red-500 text-sm mt-1">
+              class="text-red-500 dark:text-red-400 text-sm mt-1">
               Start Date is required.
             </p>
           </div>
           <div class="mb-5">
-            <label for="endDate" class="block text-xs font-medium text-gray-600 uppercase mb-2">End Date</label>
+            <label for="endDate" class="block text-xs font-medium text-gray-600 dark:text-gray-300 uppercase mb-2">End Date</label>
             <div class="flex items-center gap-3">
             <p-calendar formControlName="endDate" styleClass="h-12 border border-2 rounded-md p-3 pl-3"></p-calendar>
             </div>
-            <p *ngIf="form.get('endDate')?.invalid && form.get('endDate')?.touched" class="text-red-500 text-sm mt-1">
+            <p *ngIf="form.get('endDate')?.invalid && form.get('endDate')?.touched" class="text-red-500 dark:text-red-400 text-sm mt-1">
               End Date is required.
             </p>
           </div>
@@ -44,15 +44,15 @@
         <!-- Action Buttons -->
         <div class="flex  gap-3 border-gray-200">
           <button type="button" (click)="onClearOffMode()" *ngIf="offModeService.isOffModeActive"
-            class="px-6 text-white py-3 bg-green-500 rounded-lg font-medium hover:bg-gray-300 transition-colors duration-200">
+            class="px-6 text-white py-3 bg-green-500 dark:bg-green-600 rounded-lg font-medium hover:bg-green-600 dark:hover:bg-green-700 transition-colors duration-200">
             Clear Off Mode
           </button>
           <button type="button" (click)="onClose()"
-            class="ml-auto px-6 py-3 bg-gray-200 text-gray-700 rounded-lg font-medium hover:bg-gray-300 transition-colors duration-200">
+            class="ml-auto px-6 py-3 bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300 rounded-lg font-medium hover:bg-gray-300 dark:hover:bg-gray-500 transition-colors duration-200">
             Cancel
           </button>
           <button type="submit" [disabled]="form.invalid"
-            class="px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors duration-200 shadow-md disabled:opacity-50">
+            class="px-6 py-3 bg-blue-600 dark:bg-blue-500 text-white rounded-lg font-medium hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors duration-200 shadow-md disabled:opacity-50">
             Save
           </button>
         </div>

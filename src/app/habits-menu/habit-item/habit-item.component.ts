@@ -6,7 +6,7 @@ import { MenuItem } from 'primeng/api';
 
 @Component({
   selector: 'app-habit-item',
-  templateUrl: './habit-item.component.html',
+  templateUrl: './habit-item.component.html' ,
   styleUrls: ['./habit-item.component.css'],
 })
 export class HabitItemComponent implements OnInit {

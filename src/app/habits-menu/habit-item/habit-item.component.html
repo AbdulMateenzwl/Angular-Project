@@ -2,21 +2,21 @@
   <div class="flex flex-1 px-4 py-6">
     <i class="fas fa-check-circle text-green-500 aspect-square text-2xl"></i>
     <div class="flex flex-1 flex-col ml-4">
-      <span class="text-sm"
-        [ngClass]="{'line-through text-gray-500': habit.status === HabitStatus.COMPLETED || habit.status === HabitStatus.SKIPPED, 'text-red-500': habit.status === HabitStatus.FAILED || habit.status === HabitStatus.SKIPPED}">{{habit.title}}</span>
+      <span class="text-sm  "
+        [ngClass]="{'line-through text-gray-500': habit.status === HabitStatus.COMPLETED || habit.status === HabitStatus.SKIPPED, 'text-red-500 dark:text-red-600': habit.status === HabitStatus.FAILED || habit.status === HabitStatus.SKIPPED}">{{habit.title}}</span>
       <span class="text-xs text-gray-500"
         [ngClass]="{'text-gray-400':habit.status === HabitStatus.COMPLETED}">{{habit.progress + ' '}}/{{'
         '+habit.frequency}}</span>
     </div>
   </div>
 
-  <div class="w-px bg-gray-200 ml-auto invisible group-hover:visible"></div>
+  <div class="w-px bg-gray-200 dark:bg-gray-700 ml-auto invisible group-hover:visible"></div>
 
   <div class="flex items-center invisible group-hover:visible" *ngIf="habit.status === HabitStatus.PENDING">
     <div class="flex flex-col px-4 py-6">
-      <p class="text-xs">Add Times</p>
+      <p class="text-xs dark:text-white">Add Times</p>
       <input type="number"
-        class="border-0 border-b border-b-gray-300 focus:border-b-blue-500 outline-none px-2 py-1 text-sm w-24 text-blue-600"
+        class="border-0 border-b border-b-gray-300 dark:border-b-gray-700 dark:bg-gray-900 focus:border-b-blue-500 outline-none px-2 py-1 text-sm w-24 text-blue-600"
         value="0" pattern="^[0-9]*$" #input />
     </div>
     <i class="fa-solid fa-check text-blue-600 mx-3 p-1 text-sm bg-gray-200 rounded-md"
@@ -28,11 +28,11 @@
     <i class="fa-solid fa-trash mr-2"></i>Clear Logs
   </button>
 
-  <div class="w-px bg-gray-200 ml-auto invisible group-hover:visible"></div>
+  <div class="w-px bg-gray-200 dark:bg-gray-700 ml-auto invisible group-hover:visible"></div>
   <p-menu #menu [model]="items" styleClass="text-sm" [popup]="true"></p-menu>
-  <button pButton type="button" (click)="menu.toggle($event)">
-    <i class="fa-solid fa-ellipsis text-gray-600 my-auto mx-3 p-1 text-lg invisible group-hover:visible"></i>
+  <button type="button" (click)="menu.toggle($event)" class="bg-transparent border-none p-0 m-0">
+    <i class="fa-solid fa-ellipsis text-gray-600 dark:text-white my-auto mx-3 p-1 text-lg invisible group-hover:visible"></i>
   </button>
 </section>
-<hr class="ml-16" />
+<hr class="ml-16 border-t-2 dark:border-gray-900" />
 <app-create-habit *ngIf="isEditingHabit" [onClose]="closeEditHabit" [habitId]="habit.id"></app-create-habit>

@@ -1,13 +1,10 @@
 <div class="flex justify-between text-sm m-3">
   <div class="relative w-fit">
     <p-calendar [(ngModel)]="date" [maxDate]="maxDate" dateFormat="dd MM" [showIcon]="false"
-      inputStyleClass="inline-block w-32 " ></p-calendar>
+      inputStyleClass="inline-block w-32 dark:bg-[#1F1F1F] dark:text-gray-300 p-1"
+      styleClass="dark:bg-[#1F1F1F]"
+      panelStyleClass="dark:bg-[#1F1F1F] dark:border-[#444]" class="dark:bg-[#1F1F1F]"></p-calendar>
 
     <i class="fas fa-chevron-down absolute right-2 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none"></i>
   </div>
-
-  <p-menu #menu [model]="items" styleClass="text-sm" [popup]="true"></p-menu>
-  <button pButton type="button" (click)="menu.toggle($event)">
-    <i class="fa-solid fa-bars"></i>
-  </button>
 </div>

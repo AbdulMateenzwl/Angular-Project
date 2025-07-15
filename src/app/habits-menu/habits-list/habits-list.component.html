@@ -1,16 +1,16 @@
 <app-habit-item *ngFor="let habit of inCompletedHabits" [habit]="habit"></app-habit-item>
 <details class="text" open *ngIf="completedHabits.length > 0">
-  <summary class="text-lg ml-3">Success</summary>
-  <hr class="ml-12" />
+  <summary class="text-lg ml-3 dark:text-white">Success</summary>
+  <hr class="ml-12 border-t-2 dark:border-gray-700" />
   <app-habit-item *ngFor="let habit of completedHabits" [habit]="habit"></app-habit-item>
 </details>
 <details class="text" open *ngIf="skippedHabits.length > 0">
-  <summary class="text-lg ml-3">Skiped</summary>
-  <hr class="ml-12" />
+  <summary class="text-lg ml-3 dark:text-white">Skiped</summary>
+  <hr class="ml-12 border-t-2 dark:border-gray-700" />
   <app-habit-item *ngFor="let habit of skippedHabits" [habit]="habit"></app-habit-item>
 </details>
 <details class="text" open *ngIf="failedHabits.length > 0">
-  <summary class="text-lg ml-3">Failed</summary>
-  <hr class="ml-12" />
+  <summary class="text-lg ml-3 dark:text-white">Failed</summary>
+  <hr class="ml-12 border-t-2 dark:border-gray-700" />
   <app-habit-item *ngFor="let habit of failedHabits" [habit]="habit"></app-habit-item>
 </details>

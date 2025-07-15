@@ -103,7 +103,6 @@ export class HabitsService {
           }
           this.habits = loadedHabits;
           this.habitsSubject.next(this.habits);
-          console.log('Habits loaded:', this.habits);
         },
         (error) => {
           console.error('Error loading habits:', error);

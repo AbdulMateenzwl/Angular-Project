@@ -1,8 +1,21 @@
-a:hover{
+/* Light mode styles */
+a:hover {
   background-color: #e7e7e7;
+  border-radius: 5px;
 }
 
-.active:hover{
+.active:hover {
   background-color: #1f4fc0;
+  color: white;
+}
+
+/* Dark mode styles */
+:host-context(.dark) a:hover {
+  background-color: #374151; /* gray-700 */
+  border-radius: 5px;
+}
+
+:host-context(.dark) .active:hover {
+  background-color: #3b82f6; /* blue-500 */
   color: white;
 }

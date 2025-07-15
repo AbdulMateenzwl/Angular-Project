@@ -1,8 +1,7 @@
-<div class="flex flex-col h-[100vh] bg-[#F5F5F5]">
-  <app-topbar></app-topbar>
+<div class="flex flex-col h-[100vh] bg-[#F5F5F5] dark:bg-[#1F1F1F] pt-3">
   <div class="flex flex-1 ">
     <app-sidebar (onOffMode)="toggleOffMode()"></app-sidebar>
-    <div class="flex-1 bg-white rounded-xl overflow-y-auto border">
+    <div class="flex-1 bg-white dark:bg-[#0e0d0d] rounded-xl overflow-y-auto border dark:border-gray-700">
       <router-outlet></router-outlet>
     </div>
   </div>
