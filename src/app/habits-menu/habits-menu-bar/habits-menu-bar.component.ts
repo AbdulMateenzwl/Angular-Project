@@ -2,9 +2,10 @@ import { Component } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 
 @Component({
-  selector: 'app-habits-menu-bar',
-  templateUrl: './habits-menu-bar.component.html',
-  styleUrls: ['./habits-menu-bar.component.css'],
+    selector: 'app-habits-menu-bar',
+    templateUrl: './habits-menu-bar.component.html',
+    styleUrls: ['./habits-menu-bar.component.css'],
+    standalone: false
 })
 export class HabitsMenuBarComponent {
   date: Date = new Date();

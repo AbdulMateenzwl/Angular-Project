@@ -2,9 +2,10 @@ import { Component, Output, EventEmitter } from '@angular/core';
 import { DarkModeService } from '../services/dark-mode.service';
 
 @Component({
-  selector: 'app-sidebar',
-  templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.css'],
+    selector: 'app-sidebar',
+    templateUrl: './sidebar.component.html',
+    styleUrls: ['./sidebar.component.css'],
+    standalone: false
 })
 export class SidebarComponent {
   @Output() onOffMode = new EventEmitter<void>();

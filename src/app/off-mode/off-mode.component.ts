@@ -3,9 +3,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { OffModeService } from './off-mode.service';
 
 @Component({
-  selector: 'app-off-mode',
-  templateUrl: './off-mode.component.html',
-  styleUrls: ['./off-mode.component.css'],
+    selector: 'app-off-mode',
+    templateUrl: './off-mode.component.html',
+    styleUrls: ['./off-mode.component.css'],
+    standalone: false
 })
 export class OffModeComponent implements OnInit {
   @Input() onClose!: () => void;

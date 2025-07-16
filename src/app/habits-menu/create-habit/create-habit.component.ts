@@ -10,9 +10,10 @@ import { HabitStatus } from 'src/app/enum/HabitStatus';
 import { Days } from 'src/app/enum/Days';
 
 @Component({
-  selector: 'app-create-habit',
-  templateUrl: './create-habit.component.html',
-  styleUrls: ['./create-habit.component.css'],
+    selector: 'app-create-habit',
+    templateUrl: './create-habit.component.html',
+    styleUrls: ['./create-habit.component.css'],
+    standalone: false
 })
 export class CreateHabitComponent implements OnInit {
   @Input() onClose!: () => void;

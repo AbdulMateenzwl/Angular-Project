@@ -8,9 +8,10 @@ import { TimeOfDay } from 'src/app/enum/TimeOfDay';
 import { OffModeService } from 'src/app/off-mode/off-mode.service';
 
 @Component({
-  selector: 'app-habits-list',
-  templateUrl: './habits-list.component.html',
-  styleUrls: ['./habits-list.component.css'],
+    selector: 'app-habits-list',
+    templateUrl: './habits-list.component.html',
+    styleUrls: ['./habits-list.component.css'],
+    standalone: false
 })
 export class HabitsListComponent implements OnInit, OnDestroy {
   habits: Habit[] = [];

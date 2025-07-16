@@ -5,9 +5,10 @@ import { HabitStatus } from '../../enum/HabitStatus';
 import { MenuItem } from 'primeng/api';
 
 @Component({
-  selector: 'app-habit-item',
-  templateUrl: './habit-item.component.html' ,
-  styleUrls: ['./habit-item.component.css'],
+    selector: 'app-habit-item',
+    templateUrl: './habit-item.component.html',
+    styleUrls: ['./habit-item.component.css'],
+    standalone: false
 })
 export class HabitItemComponent implements OnInit {
   @Input() habit!: Habit;
