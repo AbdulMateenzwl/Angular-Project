@@ -21,36 +21,29 @@ import { DropdownModule } from 'primeng/dropdown';
 import { CalendarModule } from 'primeng/calendar';
 import { OffModeComponent } from './off-mode/off-mode.component';
 import { OffModeScreenComponent } from './off-mode/off-mode-screen/off-mode-screen.component';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    SidebarComponent,
-    TopbarComponent,
-    HabitsMenuComponent,
-    HabitsMenuBarComponent,
-    HabitItemComponent,
-    HabitsListComponent,
-    HabitsBottomBarComponent,
-    CreateHabitComponent,
-    OffModeComponent,
-    OffModeScreenComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    CalendarModule,
-    FormsModule,
-    BrowserAnimationsModule,
-    MenuModule,
-    ReactiveFormsModule,
-    MultiSelectModule,
-    AutoCompleteModule,
-    DropdownModule,
-    HttpClientModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent],
-})
+@NgModule({ declarations: [
+        AppComponent,
+        SidebarComponent,
+        TopbarComponent,
+        HabitsMenuComponent,
+        HabitsMenuBarComponent,
+        HabitItemComponent,
+        HabitsListComponent,
+        HabitsBottomBarComponent,
+        CreateHabitComponent,
+        OffModeComponent,
+        OffModeScreenComponent,
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        AppRoutingModule,
+        CalendarModule,
+        FormsModule,
+        BrowserAnimationsModule,
+        MenuModule,
+        ReactiveFormsModule,
+        MultiSelectModule,
+        AutoCompleteModule,
+        DropdownModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule {}
